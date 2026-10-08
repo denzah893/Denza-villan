@@ -1,0 +1,5255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b5cff">
+
+<title>ZYNEARN | Learn. Work. Earn. Grow.</title>
+
+<meta name="description"
+      content="ZYNEARN digital learning, tasks, freelancing and rewards platform.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL VARIABLES
+========================= */
+
+:root{
+    --primary:#0b5cff;
+    --primary2:#4f8cff;
+    --dark:#071426;
+    --ink:#132238;
+    --muted:#68768a;
+    --bg:#f5f8fc;
+    --card:#ffffff;
+    --line:#e5eaf1;
+    --success:#0c9b63;
+    --warning:#e7a600;
+    --danger:#d83a4a;
+
+    --shadow:0 15px 45px rgba(10,35,70,.08);
+    --radius:20px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Inter,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#06101f;
+    color:#dbe7ff;
+    padding:8px 5%;
+    font-size:12px;
+
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--line);
+
+    padding:14px 5%;
+
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-family:"Space Grotesk";
+    font-size:24px;
+    font-weight:800;
+
+    color:var(--dark);
+    white-space:nowrap;
+}
+
+.logo-mark{
+    width:40px;
+    height:40px;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #7b5cff
+        );
+
+    color:white;
+
+    display:grid;
+    place-items:center;
+
+    box-shadow:
+        0 8px 20px
+        rgba(11,92,255,.25);
+}
+
+.navlinks{
+    display:flex;
+    gap:19px;
+    align-items:center;
+
+    margin-left:auto;
+}
+
+.navlinks a{
+    font-size:14px;
+    font-weight:600;
+    color:#445166;
+}
+
+.navlinks a:hover{
+    color:var(--primary);
+}
+
+.menu-btn{
+    display:none;
+
+    border:0;
+    background:#edf3fb;
+
+    padding:10px;
+    border-radius:10px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    border:0;
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    font-weight:700;
+
+    transition:.2s;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+
+    box-shadow:
+        0 9px 20px
+        rgba(11,92,255,.22);
+}
+
+.btn-dark{
+    background:var(--dark);
+    color:white;
+}
+
+.btn-outline{
+    background:white;
+    color:var(--primary);
+
+    border:1px solid #b9cdf7;
+}
+
+.btn-light{
+    background:#edf4ff;
+    color:var(--primary);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:85px 5% 65px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(79,140,255,.22),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(91,83,255,.12),
+            transparent 30%
+        ),
+        #f8fbff;
+}
+
+.hero-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.08fr .92fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+
+    gap:7px;
+
+    background:#eaf2ff;
+    color:var(--primary);
+
+    padding:8px 13px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:800;
+
+    margin-bottom:17px;
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            72px
+        );
+
+    line-height:1.02;
+
+    margin:0 0 20px;
+
+    color:var(--dark);
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.hero p{
+    font-size:18px;
+    color:var(--muted);
+
+    max-width:650px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+
+    margin:28px 0;
+}
+
+.trust{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+
+    color:#536176;
+
+    font-size:13px;
+}
+
+.trust b{
+    color:var(--dark);
+}
+
+
+/* =========================
+   HERO DASHBOARD MOCKUP
+========================= */
+
+.hero-card{
+    background:white;
+
+    border:1px solid var(--line);
+
+    border-radius:28px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-visual{
+    min-height:440px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #071426,
+            #102b53
+        );
+
+    border-radius:25px;
+
+    padding:26px;
+
+    color:white;
+
+    position:relative;
+}
+
+.orb{
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    right:-40px;
+    top:-50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f8cff,
+            #735cff
+        );
+
+    opacity:.8;
+
+    filter:blur(2px);
+}
+
+.mock-balance{
+    margin-top:100px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    padding:20px;
+
+    border-radius:18px;
+}
+
+.mock-balance strong{
+    display:block;
+
+    font-size:35px;
+
+    margin:8px 0;
+}
+
+.mini-row{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:15px;
+}
+
+.mini{
+    background:
+        rgba(255,255,255,.07);
+
+    padding:12px;
+
+    border-radius:14px;
+
+    font-size:11px;
+}
+
+.mini b{
+    display:block;
+    font-size:17px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:78px 5%;
+}
+
+.section.alt{
+    background:white;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-head{
+    text-align:center;
+
+    max-width:720px;
+
+    margin:
+        0 auto
+        40px;
+}
+
+.section-head h2{
+    font-family:"Space Grotesk";
+
+    font-size:36px;
+
+    margin:
+        0 0 10px;
+
+    color:var(--dark);
+}
+
+.section-head p{
+    color:var(--muted);
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:35px;
+}
+
+.stat{
+    background:white;
+
+    border:1px solid var(--line);
+
+    padding:22px;
+
+    border-radius:18px;
+
+    text-align:center;
+}
+
+.stat strong{
+    font-size:28px;
+
+    color:var(--dark);
+
+    display:block;
+}
+
+.stat span{
+    font-size:13px;
+
+    color:var(--muted);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.steps,
+.cards,
+.course-grid,
+.task-grid,
+.freelance-grid,
+.feature-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.step,
+.card,
+.course,
+.task,
+.freelance,
+.feature{
+    background:white;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    padding:23px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(10,35,70,.04);
+}
+
+.step-num{
+    width:38px;
+    height:38px;
+
+    background:#eaf2ff;
+
+    color:var(--primary);
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:12px;
+
+    font-weight:800;
+}
+
+.step h3,
+.card h3,
+.course h3,
+.task h3,
+.freelance h3{
+    margin:
+        13px 0 6px;
+}
+
+.muted{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.icon{
+    font-size:28px;
+}
+
+.tag{
+    display:inline-block;
+
+    padding:
+        5px 9px;
+
+    border-radius:8px;
+
+    background:#eef5ff;
+
+    color:var(--primary);
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+.money{
+    font-weight:800;
+    color:var(--success);
+}
+
+.row{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+}
+
+.progress{
+    height:8px;
+
+    background:#e9eef5;
+
+    border-radius:99px;
+
+    overflow:hidden;
+}
+
+.progress i{
+    display:block;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            #725cff
+        );
+
+    border-radius:inherit;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #123b72
+        );
+
+    color:white;
+
+    border-radius:28px;
+
+    padding:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.cta p{
+    color:#c9d6ea;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#06101f;
+
+    color:#b7c4d7;
+
+    padding:
+        55px 5%
+        25px;
+}
+
+.footer-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        repeat(3,1fr);
+
+    gap:35px;
+}
+
+.footer h3{
+    color:white;
+}
+
+.footer a{
+    display:block;
+
+    margin:9px 0;
+
+    font-size:14px;
+}
+
+.copyright{
+    max-width:1200px;
+
+    margin:
+        35px auto 0;
+
+    border-top:
+        1px solid
+        #203047;
+
+    padding-top:18px;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   MODALS
+========================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(3,13,28,.62);
+
+    z-index:100;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+
+    width:
+        min(
+            680px,
+            100%
+        );
+
+    max-height:92vh;
+
+    overflow:auto;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+
+    right:18px;
+    top:15px;
+
+    border:0;
+
+    background:#edf2f7;
+
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    font-size:20px;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+.form-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:14px;
+}
+
+.field{
+    margin-bottom:13px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    display:block;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+
+    border:
+        1px solid
+        #d7e0eb;
+
+    border-radius:11px;
+
+    padding:12px;
+
+    outline:none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        #eaf2ff;
+}
+
+.check{
+    display:flex;
+
+    gap:8px;
+
+    align-items:flex-start;
+
+    font-size:12px;
+
+    color:var(--muted);
+
+    margin:10px 0;
+}
+
+.check input{
+    margin-top:4px;
+}
+
+.notice{
+    padding:12px;
+
+    border-radius:11px;
+
+    background:#eef7ff;
+
+    color:#31537d;
+
+    font-size:13px;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   APPLICATION
+========================= */
+
+#app{
+    display:none;
+}
+
+.app-shell{
+    min-height:100vh;
+
+    display:flex;
+}
+
+.side{
+    width:245px;
+
+    background:#071426;
+
+    color:#cbd7e8;
+
+    padding:22px 14px;
+
+    position:fixed;
+
+    top:0;
+    bottom:0;
+    left:0;
+
+    z-index:60;
+}
+
+.side .logo{
+    color:white;
+
+    padding:
+        8px 10px;
+
+    margin-bottom:25px;
+}
+
+.side a{
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+    padding:
+        12px 13px;
+
+    border-radius:11px;
+
+    margin:3px 0;
+
+    font-size:13px;
+}
+
+.side a:hover,
+.side a.active{
+    background:#12345e;
+
+    color:white;
+}
+
+.side .logout{
+    margin-top:18px;
+
+    background:#10243e;
+}
+
+.main{
+    margin-left:245px;
+
+    width:
+        calc(
+            100% - 245px
+        );
+
+    padding:
+        22px 28px;
+}
+
+.app-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.user-chip{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.avatar{
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    background:#dce9ff;
+
+    color:var(--primary);
+
+    display:grid;
+
+    place-items:center;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   APP VIEWS
+========================= */
+
+.view{
+    display:none;
+}
+
+.view.active{
+    display:block;
+}
+
+.app-title h1{
+    margin:0;
+
+    font-family:"Space Grotesk";
+
+    font-size:30px;
+}
+
+.app-title p{
+    margin:3px 0;
+
+    color:var(--muted);
+
+    font-size:13px;
+}
+
+.dash-cards{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.dash-card{
+    background:white;
+
+    border:
+        1px solid
+        var(--line);
+
+    padding:20px;
+
+    border-radius:17px;
+}
+
+.dash-card .big{
+    font-size:26px;
+
+    font-weight:800;
+
+    margin-top:6px;
+}
+
+.dash-card small{
+    color:var(--muted);
+}
+
+.app-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.3fr .7fr;
+
+    gap:18px;
+
+    margin-top:18px;
+}
+
+.panel{
+    background:white;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:18px;
+
+    padding:20px;
+}
+
+.panel h3{
+    margin-top:0;
+}
+
+.table-wrap{
+    overflow:auto;
+}
+
+.table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    font-size:13px;
+}
+
+.table th,
+.table td{
+    padding:12px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    text-align:left;
+
+    white-space:nowrap;
+}
+
+.status{
+    font-size:11px;
+
+    font-weight:700;
+
+    padding:
+        5px 8px;
+
+    border-radius:7px;
+
+    background:#eaf7f1;
+
+    color:var(--success);
+}
+
+.status.pending{
+    background:#fff5dc;
+
+    color:#996c00;
+}
+
+.admin-card{
+    border-left:
+        4px solid
+        var(--primary);
+}
+
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-bottom{
+    display:none;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    background:#071426;
+
+    color:white;
+
+    padding:
+        14px 18px;
+
+    border-radius:12px;
+
+    box-shadow:var(--shadow);
+
+    z-index:200;
+
+    display:none;
+
+    max-width:360px;
+}
+
+.toast.show{
+    display:block;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.searchbar{
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:20px;
+}
+
+.searchbar input{
+    flex:1;
+
+    padding:12px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:11px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .navlinks{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+
+        margin-left:auto;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats,
+    .dash-cards{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .steps,
+    .cards,
+    .course-grid,
+    .task-grid,
+    .freelance-grid,
+    .feature-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .app-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:720px){
+
+    .topbar{
+        display:none;
+    }
+
+    .nav{
+        padding:12px 4%;
+    }
+
+    .hero{
+        padding:
+            55px 4%;
+    }
+
+    .section{
+        padding:
+            55px 4%;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .stats,
+    .dash-cards,
+    .steps,
+    .cards,
+    .course-grid,
+    .task-grid,
+    .freelance-grid,
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .cta{
+        padding:30px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .side{
+        display:none;
+    }
+
+    .main{
+        margin-left:0;
+
+        width:100%;
+
+        padding:
+            18px 15px 90px;
+    }
+
+    .mobile-bottom{
+        position:fixed;
+
+        display:flex;
+
+        bottom:0;
+        left:0;
+        right:0;
+
+        z-index:80;
+
+        background:white;
+
+        border-top:
+            1px solid
+            var(--line);
+
+        justify-content:
+            space-around;
+
+        padding:8px 4px;
+    }
+
+    .mobile-bottom button{
+        border:0;
+
+        background:none;
+
+        color:#59677c;
+
+        font-size:11px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:2px;
+    }
+
+    .mobile-bottom button:hover{
+        color:var(--primary);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PUBLIC WEBSITE
+===================================================== -->
+
+<div id="public">
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <span>
+        🚀 Welcome to ZYNEARN
+    </span>
+
+    <span>
+        Learn • Work • Earn • Grow
+    </span>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+
+    <a href="#" class="logo">
+
+        <span class="logo-mark">
+            Z
+        </span>
+
+        ZYNEARN
+
+    </a>
+
+
+    <div class="navlinks" id="navlinks">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#how">How It Works</a>
+
+        <a href="#earn">Earn</a>
+
+        <a href="#courses">Courses</a>
+
+        <a href="#faq">FAQ</a>
+
+        <a href="#contact">Contact</a>
+
+        <button
+            class="btn btn-outline"
+            onclick="openModal('login')">
+
+            Login
+
+        </button>
+
+        <button
+            class="btn btn-primary"
+            onclick="openModal('register')">
+
+            Register
+
+        </button>
+
+    </div>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-grid">
+
+        <div>
+
+            <span class="badge">
+                ✨ DIGITAL OPPORTUNITY PLATFORM
+            </span>
+
+            <h1>
+
+                Learn.
+                Work.
+                <span>Earn.</span>
+                Grow.
+
+            </h1>
+
+            <p>
+
+                ZYNEARN brings learning, digital tasks,
+                freelancing and rewards together in one
+                modern platform.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openModal('register')">
+
+                    🚀 Start Earning
+
+                </button>
+
+                <a
+                    href="#how"
+                    class="btn btn-outline">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+
+            <div class="trust">
+
+                <span>
+                    ✓ Skills development
+                </span>
+
+                <span>
+                    ✓ Digital tasks
+                </span>
+
+                <span>
+                    ✓ Freelancing
+                </span>
+
+                <span>
+                    ✓ Learning
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- DASHBOARD PREVIEW -->
+
+        <div class="hero-card">
+
+            <div class="hero-visual">
+
+                <div class="orb"></div>
+
+                <h3>
+                    ZYNEARN Dashboard
+                </h3>
+
+                <p>
+                    Your digital earning workspace
+                </p>
+
+
+                <div class="mock-balance">
+
+                    <small>
+                        Available Balance
+                    </small>
+
+                    <strong>
+                        KSh 5,850
+                    </strong>
+
+                    <span>
+                        ↑ +12.5% this month
+                    </span>
+
+
+                    <div class="mini-row">
+
+                        <div class="mini">
+                            <b>KSh 850</b>
+                            Pending
+                        </div>
+
+                        <div class="mini">
+                            <b>48</b>
+                            Tasks
+                        </div>
+
+                        <div class="mini">
+                            <b>76%</b>
+                            Learning
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATS -->
+
+    <div class="container">
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <strong>
+                    10K+
+                </strong>
+
+                <span>
+                    Registered Users
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    50K+
+                </strong>
+
+                <span>
+                    Tasks Completed
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    100+
+                </strong>
+
+                <span>
+                    Learning Resources
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    Platform Access
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section
+    class="section alt"
+    id="about">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Everything You Need to Grow
+            </h2>
+
+            <p>
+                ZYNEARN combines digital learning,
+                work opportunities and career development
+                in one platform.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature">
+
+                <span class="icon">
+                    🎓
+                </span>
+
+                <h3>
+                    Learn New Skills
+                </h3>
+
+                <p class="muted">
+
+                    Access practical courses in web
+                    development, design, marketing,
+                    cybersecurity and more.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span class="icon">
+                    💼
+                </span>
+
+                <h3>
+                    Find Digital Work
+                </h3>
+
+                <p class="muted">
+
+                    Discover microtasks, freelancing
+                    opportunities and digital services.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span class="icon">
+                    💰
+                </span>
+
+                <h3>
+                    Track Your Rewards
+                </h3>
+
+                <p class="muted">
+
+                    Monitor your earnings, completed
+                    tasks, referrals and wallet activity.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section
+    class="section"
+    id="how">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                How ZYNEARN Works
+            </h2>
+
+            <p>
+                Start your journey in a few simple steps.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-num">
+                    1
+                </div>
+
+                <h3>
+                    Create Account
+                </h3>
+
+                <p class="muted">
+
+                    Register with your name, email,
+                    phone number and password.
+
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-num">
+                    2
+                </div>
+
+                <h3>
+                    Learn & Build Skills
+                </h3>
+
+                <p class="muted">
+
+                    Take practical courses and complete
+                    assessments.
+
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-num">
+                    3
+                </div>
+
+                <h3>
+                    Complete Tasks
+                </h3>
+
+                <p class="muted">
+
+                    Choose available digital tasks that
+                    match your skills.
+
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-num">
+                    4
+                </div>
+
+                <h3>
+                    Track Earnings
+                </h3>
+
+                <p class="muted">
+
+                    Monitor your balance and completed
+                    work from your dashboard.
+
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-num">
+                    5
+                </div>
+
+                <h3>
+                    Build Your Profile
+                </h3>
+
+                <p class="muted">
+
+                    Showcase your skills and connect
+                    with potential clients.
+
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-num">
+                    6
+                </div>
+
+                <h3>
+                    Grow
+                </h3>
+
+                <p class="muted">
+
+                    Continue learning and developing
+                    your digital career.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EARN -->
+
+<section
+    class="section alt"
+    id="earn">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Featured Opportunities
+            </h2>
+
+            <p>
+                Explore sample digital tasks available
+                through the ZYNEARN platform.
+            </p>
+
+        </div>
+
+
+        <div
+            class="task-grid"
+            id="publicTasks">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section
+    class="section"
+    id="courses">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Learn Skills That Matter
+            </h2>
+
+            <p>
+                Build practical skills through structured
+                courses and learning activities.
+            </p>
+
+        </div>
+
+
+        <div
+            class="course-grid"
+            id="publicCourses">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <div>
+
+                <h2>
+                    Ready to Start Your Journey?
+                </h2>
+
+                <p>
+                    Create your ZYNEARN account and
+                    explore learning and digital
+                    opportunities.
+                </p>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="openModal('register')">
+
+                Create Free Account
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section
+    class="section alt"
+    id="faq">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    What is ZYNEARN?
+                </h3>
+
+                <p class="muted">
+
+                    ZYNEARN is a digital platform concept
+                    that combines learning, tasks,
+                    freelancing and rewards.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Is earning guaranteed?
+                </h3>
+
+                <p class="muted">
+
+                    No. Opportunities and rewards depend
+                    on available tasks, eligibility,
+                    performance and platform rules.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    How do I withdraw?
+                </h3>
+
+                <p class="muted">
+
+                    The platform interface supports
+                    withdrawal requests such as M-Pesa
+                    and bank transfer. Actual payments
+                    require a secure backend integration.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section
+    class="section"
+    id="contact">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <div>
+
+                <h2>
+                    Need Help?
+                </h2>
+
+                <p>
+                    Contact ZYNEARN support through
+                    your account dashboard.
+                </p>
+
+            </div>
+
+            <button
+                class="btn btn-primary"
+                onclick="openModal('register')">
+
+                Join ZYNEARN
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo" style="color:white">
+
+                <span class="logo-mark">
+                    Z
+                </span>
+
+                ZYNEARN
+
+            </div>
+
+            <p>
+                Learn. Work. Earn. Grow.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Platform
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#earn">
+                Earn
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Account
+            </h3>
+
+            <a href="#"
+               onclick="openModal('login');return false">
+
+                Login
+
+            </a>
+
+            <a href="#"
+               onclick="openModal('register');return false">
+
+                Register
+
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 ZYNEARN. All rights reserved.
+
+        <br>
+
+        Prototype interface — production authentication,
+        payment processing and security require a backend.
+
+    </div>
+
+</footer>
+
+</div>
+
+
+<!-- =====================================================
+     APPLICATION
+===================================================== -->
+
+<div id="app">
+
+    <div class="app-shell">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="side">
+
+            <a
+                href="#"
+                class="logo"
+                onclick="showView('dashboard');return false">
+
+                <span class="logo-mark">
+                    Z
+                </span>
+
+                ZYNEARN
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="dashboard"
+                class="active">
+
+                🏠
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="tasks">
+
+                💼
+                Earn / Tasks
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="freelance">
+
+                🧑‍💻
+                Freelancing
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="learn">
+
+                🎓
+                Learn
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="wallet">
+
+                💰
+                Wallet
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="referrals">
+
+                👥
+                Referrals
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="achievements">
+
+                🏆
+                Achievements
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="notifications">
+
+                🔔
+                Notifications
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="profile">
+
+                👤
+                Profile
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="support">
+
+                🆘
+                Support
+
+            </a>
+
+
+            <a
+                href="#"
+                data-view="admin"
+                class="admin-card">
+
+                ⚙️
+                Admin Dashboard
+
+            </a>
+
+
+            <a
+                href="#"
+                class="logout"
+                onclick="logout();return false">
+
+                🚪
+                Logout
+
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main">
+
+
+            <div class="app-top">
+
+                <div class="app-title">
+
+                    <h1 id="viewTitle">
+                        Dashboard
+                    </h1>
+
+                    <p id="viewSub">
+                        Welcome back to your ZYNEARN workspace.
+                    </p>
+
+                </div>
+
+
+                <div class="user-chip">
+
+                    <span id="userName">
+                        User
+                    </span>
+
+                    <div
+                        class="avatar"
+                        id="avatar">
+
+                        U
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section
+                class="view active"
+                id="view-dashboard">
+
+
+                <div class="dash-cards">
+
+                    <div class="dash-card">
+
+                        <small>
+                            Available Balance
+                        </small>
+
+                        <div class="big">
+                            KSh 5,850
+                        </div>
+
+                        <span class="money">
+                            Ready for eligible withdrawal
+                        </span>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Pending Earnings
+                        </small>
+
+                        <div class="big">
+                            KSh 850
+                        </div>
+
+                        <span>
+                            Under review
+                        </span>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Total Earnings
+                        </small>
+
+                        <div class="big">
+                            KSh 12,650
+                        </div>
+
+                        <span>
+                            All-time demo figure
+                        </span>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Referral Earnings
+                        </small>
+
+                        <div class="big">
+                            KSh 1,200
+                        </div>
+
+                        <span>
+                            Referral activity
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="app-grid">
+
+
+                    <div class="panel">
+
+                        <h3>
+                            Recent Transactions
+                        </h3>
+
+
+                        <div class="table-wrap">
+
+                            <table class="table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Activity
+                                        </th>
+
+                                        <th>
+                                            Amount
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+                                            Data Verification
+                                        </td>
+
+                                        <td class="money">
+                                            +KSh 50
+                                        </td>
+
+                                        <td>
+                                            <span class="status">
+                                                Completed
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            Survey Research
+                                        </td>
+
+                                        <td class="money">
+                                            +KSh 80
+                                        </td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Pending
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            Referral Activity
+                                        </td>
+
+                                        <td class="money">
+                                            +KSh 200
+                                        </td>
+
+                                        <td>
+                                            <span class="status">
+                                                Completed
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <h3>
+                            Quick Actions
+                        </h3>
+
+
+                        <button
+                            class="btn btn-primary"
+                            style="width:100%;margin-bottom:10px"
+                            onclick="showView('tasks')">
+
+                            Find Tasks
+
+                        </button>
+
+
+                        <button
+                            class="btn btn-light"
+                            style="width:100%;margin-bottom:10px"
+                            onclick="showView('learn')">
+
+                            Continue Learning
+
+                        </button>
+
+
+                        <button
+                            class="btn btn-light"
+                            style="width:100%;margin-bottom:10px"
+                            onclick="openModal('withdraw')">
+
+                            Withdraw
+
+                        </button>
+
+
+                        <button
+                            class="btn btn-light"
+                            style="width:100%"
+                            onclick="showView('referrals')">
+
+                            Invite Friends
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TASKS ================= -->
+
+            <section
+                class="view"
+                id="view-tasks">
+
+                <div class="panel">
+
+                    <div class="searchbar">
+
+                        <input
+                            placeholder="Search tasks...">
+
+                        <button
+                            class="btn btn-primary">
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="task-grid"
+                    id="appTasks">
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FREELANCE ================= -->
+
+            <section
+                class="view"
+                id="view-freelance">
+
+                <div class="section-head"
+                     style="text-align:left">
+
+                    <h2>
+                        Freelancing Marketplace
+                    </h2>
+
+                    <p>
+                        Explore services and connect with
+                        clients.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="freelance-grid"
+                    id="appFreelance">
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= LEARN ================= -->
+
+            <section
+                class="view"
+                id="view-learn">
+
+                <div class="panel"
+                     style="margin-bottom:18px">
+
+                    <h3>
+                        Skill Assessment
+                    </h3>
+
+                    <p class="muted">
+
+                        Test your HTML/CSS knowledge and
+                        receive a demonstration score and
+                        badge.
+
+                    </p>
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="runAssessment()">
+
+                        Start Assessment
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="course-grid"
+                    id="appCourses">
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= WALLET ================= -->
+
+            <section
+                class="view"
+                id="view-wallet">
+
+
+                <div class="dash-cards">
+
+                    <div class="dash-card">
+
+                        <small>
+                            Wallet Balance
+                        </small>
+
+                        <div class="big">
+                            KSh 5,850
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Pending
+                        </small>
+
+                        <div class="big">
+                            KSh 850
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Total Earnings
+                        </small>
+
+                        <div class="big">
+                            KSh 12,650
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="openModal('withdraw')">
+
+                            Withdraw
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="panel"
+                    style="margin-top:18px">
+
+                    <h3>
+                        Transaction History
+                    </h3>
+
+
+                    <div class="table-wrap">
+
+                        <table class="table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Description
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        Today
+                                    </td>
+
+                                    <td>
+                                        Data Verification
+                                    </td>
+
+                                    <td class="money">
+                                        +KSh 50
+                                    </td>
+
+                                    <td>
+                                        <span class="status">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Yesterday
+                                    </td>
+
+                                    <td>
+                                        Survey
+                                    </td>
+
+                                    <td class="money">
+                                        +KSh 80
+                                    </td>
+
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= REFERRALS ================= -->
+
+            <section
+                class="view"
+                id="view-referrals">
+
+                <div class="panel">
+
+                    <h3>
+                        Referral Center
+                    </h3>
+
+                    <p class="muted">
+
+                        Share your referral link and track
+                        referral activity. Referral activity
+                        does not guarantee income.
+
+                    </p>
+
+
+                    <div class="field">
+
+                        <label>
+                            Your Referral Link
+                        </label>
+
+                        <input
+                            id="refLink"
+                            value="https://zynearn.example/ref/yourusername"
+                            readonly>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="copyReferral()">
+
+                        Copy Referral Link
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="dash-cards"
+                    style="margin-top:18px">
+
+                    <div class="dash-card">
+
+                        <small>
+                            Total Referrals
+                        </small>
+
+                        <div class="big">
+                            24
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Active Referrals
+                        </small>
+
+                        <div class="big">
+                            16
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Referral Activity
+                        </small>
+
+                        <div class="big">
+                            KSh 1,200
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ACHIEVEMENTS ================= -->
+
+            <section
+                class="view"
+                id="view-achievements">
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <span class="icon">
+                            🥇
+                        </span>
+
+                        <h3>
+                            First Task
+                        </h3>
+
+                        <p class="muted">
+                            Complete your first task.
+                        </p>
+
+                        <span class="status">
+                            Unlocked
+                        </span>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <span class="icon">
+                            🎓
+                        </span>
+
+                        <h3>
+                            Skill Master
+                        </h3>
+
+                        <p class="muted">
+                            Complete learning activities.
+                        </p>
+
+                        <span class="status">
+                            In Progress
+                        </span>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <span class="icon">
+                            💼
+                        </span>
+
+                        <h3>
+                            Freelancer
+                        </h3>
+
+                        <p class="muted">
+                            Build a freelance profile.
+                        </p>
+
+                        <span class="status pending">
+                            Locked
+                        </span>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <span class="icon">
+                            👥
+                        </span>
+
+                        <h3>
+                            Community Builder
+                        </h3>
+
+                        <p class="muted">
+                            Build referral activity.
+                        </p>
+
+                        <span class="status">
+                            In Progress
+                        </span>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <span class="icon">
+                            🔥
+                        </span>
+
+                        <h3>
+                            30-Day Streak
+                        </h3>
+
+                        <p class="muted">
+                            Maintain platform activity.
+                        </p>
+
+                        <span class="status pending">
+                            Locked
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= NOTIFICATIONS ================= -->
+
+            <section
+                class="view"
+                id="view-notifications">
+
+                <div class="panel">
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+
+                    <div class="table-wrap">
+
+                        <table class="table">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        🎯 New task available
+                                    </td>
+
+                                    <td>
+                                        5 min ago
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        🎓 Course progress updated
+                                    </td>
+
+                                    <td>
+                                        Today
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        💰 Withdrawal status updated
+                                    </td>
+
+                                    <td>
+                                        Yesterday
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        🔐 Account security notice
+                                    </td>
+
+                                    <td>
+                                        Yesterday
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PROFILE ================= -->
+
+            <section
+                class="view"
+                id="view-profile">
+
+                <div class="panel">
+
+                    <h3>
+                        Profile
+                    </h3>
+
+
+                    <div class="form-grid">
+
+                        <div class="field">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input
+                                id="profileName"
+                                placeholder="Your full name">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Username
+                            </label>
+
+                            <input
+                                placeholder="Username">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                placeholder="Email">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Phone
+                            </label>
+
+                            <input
+                                placeholder="+254...">
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Country
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Kenya
+                                </option>
+
+                                <option>
+                                    Uganda
+                                </option>
+
+                                <option>
+                                    Tanzania
+                                </option>
+
+                                <option>
+                                    Rwanda
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Education
+                            </label>
+
+                            <input
+                                placeholder="Education">
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Skills
+                            </label>
+
+                            <input
+                                placeholder="Web development, design, writing...">
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Bio
+                            </label>
+
+                            <textarea
+                                rows="5"
+                                placeholder="Tell clients about yourself..."></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="showToast('Profile saved in this demo.')">
+
+                        Save Profile
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SUPPORT ================= -->
+
+            <section
+                class="view"
+                id="view-support">
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <span class="icon">
+                            📚
+                        </span>
+
+                        <h3>
+                            Help Center
+                        </h3>
+
+                        <p class="muted">
+                            Browse account and platform
+                            help topics.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <span class="icon">
+                            💬
+                        </span>
+
+                        <h3>
+                            Live Chat
+                        </h3>
+
+                        <p class="muted">
+                            Contact support for assistance.
+                        </p>
+
+                        <button
+                            class="btn btn-light"
+                            onclick="showToast('Live chat is a production feature.')">
+
+                            Open Chat
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <span class="icon">
+                            🎫
+                        </span>
+
+                        <h3>
+                            Submit Ticket
+                        </h3>
+
+                        <p class="muted">
+                            Send a support request.
+                        </p>
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="openModal('ticket')">
+
+                            Submit Ticket
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADMIN ================= -->
+
+            <section
+                class="view"
+                id="view-admin">
+
+                <div class="notice">
+
+                    Production administrator permissions
+                    must be enforced by the backend.
+                    This interface is a demonstration.
+
+                </div>
+
+
+                <div class="dash-cards">
+
+                    <div class="dash-card">
+
+                        <small>
+                            Total Users
+                        </small>
+
+                        <div class="big">
+                            10,245
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Active Users
+                        </small>
+
+                        <div class="big">
+                            7,890
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Tasks Completed
+                        </small>
+
+                        <div class="big">
+                            52,430
+                        </div>
+
+                    </div>
+
+
+                    <div class="dash-card">
+
+                        <small>
+                            Pending Withdrawals
+                        </small>
+
+                        <div class="big">
+                            126
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="app-grid"
+                    style="margin-top:18px">
+
+                    <div class="panel">
+
+                        <h3>
+                            Platform Activity
+                        </h3>
+
+                        <div class="table-wrap">
+
+                            <table class="table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Area
+                                        </th>
+
+                                        <th>
+                                            Activity
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+                                            Users
+                                        </td>
+
+                                        <td>
+                                            New registrations
+                                        </td>
+
+                                        <td>
+                                            <span class="status">
+                                                Active
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            Tasks
+                                        </td>
+
+                                        <td>
+                                            Task submissions
+                                        </td>
+
+                                        <td>
+                                            <span class="status">
+                                                Active
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            Withdrawals
+                                        </td>
+
+                                        <td>
+                                            Requests awaiting review
+                                        </td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Review
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <h3>
+                            Administration
+                        </h3>
+
+                        <button
+                            class="btn btn-primary"
+                            style="width:100%;margin-bottom:10px"
+                            onclick="showToast('User management opened.')">
+
+                            Manage Users
+
+                        </button>
+
+
+                        <button
+                            class="btn btn-light"
+                            style="width:100%;margin-bottom:10px"
+                            onclick="showToast('Task management opened.')">
+
+                            Manage Tasks
+
+                        </button>
+
+
+                        <button
+                            class="btn btn-light"
+                            style="width:100%;margin-bottom:10px"
+                            onclick="showToast('Course management opened.')">
+
+                            Manage Courses
+
+                        </button>
+
+
+                        <button
+                            class="btn btn-light"
+                            style="width:100%"
+                            onclick="showToast('Payment management opened.')">
+
+                            Manage Payments
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- MOBILE BOTTOM NAV -->
+
+    <div class="mobile-bottom">
+
+        <button onclick="showView('dashboard')">
+            🏠
+            <span>Home</span>
+        </button>
+
+        <button onclick="showView('tasks')">
+            💼
+            <span>Earn</span>
+        </button>
+
+        <button onclick="showView('learn')">
+            🎓
+            <span>Learn</span>
+        </button>
+
+        <button onclick="showView('wallet')">
+            💰
+            <span>Wallet</span>
+        </button>
+
+        <button onclick="showView('profile')">
+            👤
+            <span>Profile</span>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     REGISTER MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="registerModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModals()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Create Your ZYNEARN Account
+        </h2>
+
+        <p class="muted">
+            Join the platform and start exploring
+            learning and digital opportunities.
+        </p>
+
+
+        <form
+            onsubmit="register(event)">
+
+
+            <div class="form-grid">
+
+
+                <div class="field">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        id="regName"
+                        required
+                        placeholder="Your full name">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Username
+                    </label>
+
+                    <input
+                        id="regUser"
+                        required
+                        placeholder="Choose username">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        id="regEmail"
+                        type="email"
+                        required
+                        placeholder="you@example.com">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        id="regPhone"
+                        required
+                        placeholder="+254...">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Country
+                    </label>
+
+                    <select
+                        id="regCountry">
+
+                        <option>
+                            Kenya
+                        </option>
+
+                        <option>
+                            Uganda
+                        </option>
+
+                        <option>
+                            Tanzania
+                        </option>
+
+                        <option>
+                            Rwanda
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Referral Code
+                    </label>
+
+                    <input
+                        id="regReferral"
+                        placeholder="Optional">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        id="regPass"
+                        type="password"
+                        required
+                        minlength="6"
+                        placeholder="Minimum 6 characters">
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Confirm Password
+                    </label>
+
+                    <input
+                        id="regConfirm"
+                        type="password"
+                        required
+                        placeholder="Repeat password">
+
+                </div>
+
+            </div>
+
+
+            <label class="check">
+
+                <input
+                    type="checkbox"
+                    id="regTerms"
+                    required>
+
+                <span>
+
+                    I agree to the ZYNEARN terms,
+                    privacy policy and platform rules.
+
+                </span>
+
+            </label>
+
+
+            <button
+                class="btn btn-primary"
+                style="width:100%">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="loginModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModals()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Welcome Back
+        </h2>
+
+        <p class="muted">
+            Login to your ZYNEARN dashboard.
+        </p>
+
+
+        <form
+            onsubmit="login(event)">
+
+
+            <div class="field">
+
+                <label>
+                    Email or Username
+                </label>
+
+                <input
+                    id="loginId"
+                    required>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    id="loginPass"
+                    type="password"
+                    required>
+
+            </div>
+
+
+            <label class="check">
+
+                <input type="checkbox">
+
+                Remember me
+
+            </label>
+
+
+            <button
+                class="btn btn-primary"
+                style="width:100%">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <div
+            style="
+            display:flex;
+            justify-content:space-between;
+            margin-top:15px;
+            font-size:13px">
+
+            <a
+                href="#"
+                onclick="
+                showToast(
+                    'Password reset would be sent by the production backend.'
+                );
+                return false">
+
+                Forgot password?
+
+            </a>
+
+
+            <a
+                href="#"
+                onclick="
+                closeModals();
+                openModal('register');
+                return false">
+
+                Create account
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     WITHDRAW MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="withdrawModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModals()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Withdraw Funds
+        </h2>
+
+
+        <div class="notice">
+
+            Withdrawal requests are subject to
+            verification, applicable fees and minimum
+            withdrawal requirements.
+
+        </div>
+
+
+        <form
+            onsubmit="withdraw(event)">
+
+
+            <div class="field">
+
+                <label>
+                    Amount (KSh)
+                </label>
+
+                <input
+                    id="withdrawAmount"
+                    type="number"
+                    min="100"
+                    required>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Payment Method
+                </label>
+
+                <select id="withdrawMethod">
+
+                    <option>
+                        M-Pesa
+                    </option>
+
+                    <option>
+                        Bank Transfer
+                    </option>
+
+                    <option>
+                        Other supported provider
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Account / Phone Details
+                </label>
+
+                <input
+                    id="withdrawAccount"
+                    required
+                    placeholder="+254... or account number">
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                style="width:100%">
+
+                Confirm Withdrawal
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUPPORT TICKET MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="ticketModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModals()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Submit Support Ticket
+        </h2>
+
+
+        <form
+            onsubmit="ticket(event)">
+
+
+            <div class="field">
+
+                <label>
+                    Subject
+                </label>
+
+                <input
+                    required
+                    placeholder="What do you need help with?">
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Category
+                </label>
+
+                <select>
+
+                    <option>
+                        Account
+                    </option>
+
+                    <option>
+                        Task
+                    </option>
+
+                    <option>
+                        Payment
+                    </option>
+
+                    <option>
+                        Withdrawal
+                    </option>
+
+                    <option>
+                        Course
+                    </option>
+
+                    <option>
+                        Referral
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Message
+                </label>
+
+                <textarea
+                    rows="5"
+                    required></textarea>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary">
+
+                Submit Ticket
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script>
+
+/* =====================================================
+   SAMPLE TASK DATA
+===================================================== */
+
+const tasks = [
+
+    {
+        title:"Data Verification",
+        cat:"Data",
+        reward:"KSh 50",
+        time:"10 min",
+        slots:"100",
+        icon:"🔎"
+    },
+
+    {
+        title:"Survey Research",
+        cat:"Survey",
+        reward:"KSh 80",
+        time:"15 min",
+        slots:"60",
+        icon:"📝"
+    },
+
+    {
+        title:"Image Tagging",
+        cat:"AI Data",
+        reward:"KSh 45",
+        time:"8 min",
+        slots:"120",
+        icon:"🖼️"
+    },
+
+    {
+        title:"Content Categorization",
+        cat:"Content",
+        reward:"KSh 70",
+        time:"12 min",
+        slots:"75",
+        icon:"🗂️"
+    },
+
+    {
+        title:"Website Testing",
+        cat:"Testing",
+        reward:"KSh 120",
+        time:"20 min",
+        slots:"25",
+        icon:"🧪"
+    },
+
+    {
+        title:"Transcription Sample",
+        cat:"Audio",
+        reward:"KSh 100",
+        time:"18 min",
+        slots:"40",
+        icon:"🎧"
+    }
+
+];
+
+
+/* =====================================================
+   COURSE DATA
+===================================================== */
+
+const courses = [
+
+    {
+        title:"Web Development Beginner",
+        desc:
+        "HTML, CSS, responsive layouts and practical website projects.",
+        progress:80,
+        lessons:12,
+        icon:"💻"
+    },
+
+    {
+        title:"JavaScript Essentials",
+        desc:
+        "Learn programming logic, DOM interactions and browser APIs.",
+        progress:52,
+        lessons:16,
+        icon:"⚡"
+    },
+
+    {
+        title:"Graphic Design",
+        desc:
+        "Visual principles, branding, layouts and digital design workflow.",
+        progress:35,
+        lessons:10,
+        icon:"🎨"
+    },
+
+    {
+        title:"Digital Marketing",
+        desc:
+        "Content, social media, campaigns, analytics and online growth.",
+        progress:20,
+        lessons:14,
+        icon:"📣"
+    },
+
+    {
+        title:"Cybersecurity Basics",
+        desc:
+        "Security awareness, threats, authentication and safe systems.",
+        progress:10,
+        lessons:15,
+        icon:"🛡️"
+    },
+
+    {
+        title:"Networking Fundamentals",
+        desc:
+        "Networks, devices, addressing, troubleshooting and support.",
+        progress:0,
+        lessons:12,
+        icon:"🌐"
+    }
+
+];
+
+
+/* =====================================================
+   FREELANCE DATA
+===================================================== */
+
+const freelance = [
+
+    [
+        "Web Development",
+        "Build responsive websites and web applications.",
+        "KSh 2,500+",
+        "💻"
+    ],
+
+    [
+        "Graphic Design",
+        "Logos, social graphics, posters and brand assets.",
+        "KSh 1,000+",
+        "🎨"
+    ],
+
+    [
+        "Writing",
+        "Articles, product copy, reports and web content.",
+        "KSh 800+",
+        "✍️"
+    ],
+
+    [
+        "Translation",
+        "Translate documents and digital content.",
+        "KSh 700+",
+        "🌍"
+    ],
+
+    [
+        "Digital Marketing",
+        "Campaign setup, content and social media support.",
+        "KSh 2,000+",
+        "📣"
+    ],
+
+    [
+        "IT Support",
+        "Remote troubleshooting, setup and technical assistance.",
+        "KSh 1,500+",
+        "🧰"
+    ]
+
+];
+
+
+/* =====================================================
+   TASK HTML
+===================================================== */
+
+function taskHTML(t){
+
+    return `
+
+        <div class="task">
+
+            <div class="row">
+
+                <span class="icon">
+                    ${t.icon}
+                </span>
+
+                <span class="tag">
+                    ${t.cat}
+                </span>
+
+            </div>
+
+
+            <h3>
+                ${t.title}
+            </h3>
+
+
+            <p class="muted">
+
+                Reward
+                <b class="money">
+                    ${t.reward}
+                </b>
+
+                • ${t.time}
+                • ${t.slots} slots
+
+            </p>
+
+
+            <div class="row">
+
+                <span class="status">
+                    Available
+                </span>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="startTask('${t.title}')">
+
+                    Start Task
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =====================================================
+   COURSE HTML
+===================================================== */
+
+function courseHTML(c){
+
+    return `
+
+        <div class="course">
+
+            <div class="row">
+
+                <span class="icon">
+                    ${c.icon}
+                </span>
+
+                <span class="tag">
+                    ${c.lessons} lessons
+                </span>
+
+            </div>
+
+
+            <h3>
+                ${c.title}
+            </h3>
+
+
+            <p class="muted">
+                ${c.desc}
+            </p>
+
+
+            <div class="progress">
+
+                <i
+                    style="width:${c.progress}%">
+                </i>
+
+            </div>
+
+
+            <div
+                class="row"
+                style="margin-top:8px">
+
+                <small>
+                    ${c.progress}% complete
+                </small>
+
+
+                <button
+                    class="btn btn-light"
+                    onclick="
+                    continueCourse('${c.title}')">
+
+                    ${c.progress
+                        ? "Continue"
+                        : "Start Course"}
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =====================================================
+   FREELANCE HTML
+===================================================== */
+
+function freelanceHTML(f){
+
+    return `
+
+        <div class="freelance">
+
+            <span class="icon">
+                ${f[3]}
+            </span>
+
+
+            <h3>
+                ${f[0]}
+            </h3>
+
+
+            <p class="muted">
+                ${f[1]}
+            </p>
+
+
+            <div class="row">
+
+                <b class="money">
+                    ${f[2]}
+                </b>
+
+
+                <button
+                    class="btn btn-light"
+                    onclick="
+                    showToast(
+                    'Freelancer marketplace opened for ${f[0]}.'
+                    )">
+
+                    Hire Freelancer
+
+                </button>
+
+            </div>
+
+        </div>
+
+    `;
+}
+
+
+/* =====================================================
+   RENDER CONTENT
+===================================================== */
+
+function render(){
+
+    document.getElementById(
+        "publicTasks"
+    ).innerHTML =
+        tasks
+        .slice(0,3)
+        .map(taskHTML)
+        .join("");
+
+
+    document.getElementById(
+        "appTasks"
+    ).innerHTML =
+        tasks
+        .map(taskHTML)
+        .join("");
+
+
+    document.getElementById(
+        "publicCourses"
+    ).innerHTML =
+        courses
+        .slice(0,3)
+        .map(courseHTML)
+        .join("");
+
+
+    document.getElementById(
+        "appCourses"
+    ).innerHTML =
+        courses
+        .map(courseHTML)
+        .join("");
+
+
+    document.getElementById(
+        "appFreelance"
+    ).innerHTML =
+        freelance
+        .map(freelanceHTML)
+        .join("");
+
+}
+
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+function openModal(type){
+
+    closeModals();
+
+    document
+        .getElementById(
+            type + "Modal"
+        )
+        .classList.add("open");
+
+}
+
+
+function closeModals(){
+
+    document
+        .querySelectorAll(".modal")
+        .forEach(
+            m =>
+            m.classList.remove("open")
+        );
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(msg){
+
+    const t =
+        document.getElementById("toast");
+
+    t.textContent = msg;
+
+    t.classList.add("show");
+
+    setTimeout(
+        () =>
+        t.classList.remove("show"),
+        3200
+    );
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navlinks");
+
+    if(
+        nav.style.display === "flex"
+    ){
+
+        nav.style.display = "";
+
+    }
+    else{
+
+        nav.style.display = "flex";
+
+        nav.style.flexDirection = "column";
+
+        nav.style.position = "absolute";
+
+        nav.style.top = "70px";
+
+        nav.style.right = "4%";
+
+        nav.style.background = "white";
+
+        nav.style.padding = "18px";
+
+        nav.style.borderRadius = "15px";
+
+        nav.style.boxShadow =
+            "0 15px 40px rgba(0,0,0,.12)";
+
+    }
+
+}
+
+
+/* =====================================================
+   REGISTER
+===================================================== */
+
+function register(e){
+
+    e.preventDefault();
+
+
+    if(
+        regPass.value !==
+        regConfirm.value
+    ){
+
+        showToast(
+            "Passwords do not match."
+        );
+
+        return;
+    }
+
+
+    const user = {
+
+        name:regName.value,
+
+        user:regUser.value,
+
+        email:regEmail.value,
+
+        phone:regPhone.value,
+
+        country:regCountry.value
+
+    };
+
+
+    localStorage.setItem(
+        "zynearnUser",
+        JSON.stringify(user)
+    );
+
+
+    closeModals();
+
+    enterApp();
+
+
+    showToast(
+        "Welcome to ZYNEARN! Your account has been created."
+    );
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login(e){
+
+    e.preventDefault();
+
+
+    let id =
+        loginId.value;
+
+
+    let saved =
+        JSON.parse(
+            localStorage.getItem(
+                "zynearnUser"
+            ) || "null"
+        );
+
+
+    if(
+        saved &&
+        id !== saved.email &&
+        id !== saved.user
+    ){
+
+        showToast(
+            "Demo login: use the registered email or username."
+        );
+
+        return;
+
+    }
+
+
+    closeModals();
+
+    enterApp();
+
+
+    showToast(
+        "Login successful. Welcome back!"
+    );
+
+}
+
+
+/* =====================================================
+   ENTER APP
+===================================================== */
+
+function enterApp(){
+
+    document.getElementById(
+        "public"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "app"
+    ).style.display = "block";
+
+
+    let u =
+        JSON.parse(
+            localStorage.getItem(
+                "zynearnUser"
+            ) || "null"
+        );
+
+
+    if(u){
+
+        document.getElementById(
+            "userName"
+        ).textContent =
+            u.name.split(" ")[0];
+
+
+        document.getElementById(
+            "avatar"
+        ).textContent =
+            u.name
+            .split(" ")
+            .map(x => x[0])
+            .join("")
+            .slice(0,2)
+            .toUpperCase();
+
+
+        document.getElementById(
+            "profileName"
+        ).value =
+            u.name;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    document.getElementById(
+        "app"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "public"
+    ).style.display = "block";
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+
+    showToast(
+        "You have been logged out."
+    );
+
+}
+
+
+/* =====================================================
+   SHOW APPLICATION VIEW
+===================================================== */
+
+function showView(view){
+
+    document
+        .querySelectorAll(".view")
+        .forEach(
+            v =>
+            v.classList.remove("active")
+        );
+
+
+    document
+        .getElementById(
+            "view-" + view
+        )
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(
+            ".side a[data-view]"
+        )
+        .forEach(
+            a =>
+            a.classList.toggle(
+                "active",
+                a.dataset.view === view
+            )
+        );
+
+
+    const names = {
+
+        dashboard:[
+            "Dashboard",
+            "Welcome back to your ZYNEARN workspace."
+        ],
+
+        tasks:[
+            "Earn / Tasks",
+            "Find available digital task opportunities."
+        ],
+
+        freelance:[
+            "Freelancing",
+            "Offer your skills and connect with clients."
+        ],
+
+        learn:[
+            "Learn",
+            "Build skills and earn certificates."
+        ],
+
+        wallet:[
+            "Wallet",
+            "Track your balance and transactions."
+        ],
+
+        referrals:[
+            "Referrals",
+            "Invite people and track referral activity."
+        ],
+
+        achievements:[
+            "Achievements",
+            "Your milestones and digital badges."
+        ],
+
+        notifications:[
+            "Notifications",
+            "Stay updated with your account."
+        ],
+
+        profile:[
+            "Profile",
+            "Manage your personal information and settings."
+        ],
+
+        support:[
+            "Support",
+            "Get help with your ZYNEARN account."
+        ],
+
+        admin:[
+            "Admin Dashboard",
+            "Manage platform activity and analytics."
+        ]
+
+    };
+
+
+    document.getElementById(
+        "viewTitle"
+    ).textContent =
+        names[view][0];
+
+
+    document.getElementById(
+        "viewSub"
+    ).textContent =
+        names[view][1];
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+/* =====================================================
+   SIDEBAR EVENTS
+===================================================== */
+
+document
+.querySelectorAll(
+    ".side a[data-view]"
+)
+.forEach(
+
+    a =>
+
+    a.addEventListener(
+        "click",
+
+        e => {
+
+            e.preventDefault();
+
+            showView(
+                a.dataset.view
+            );
+
+        }
+
+    )
+
+);
+
+
+/* =====================================================
+   TASK
+===================================================== */
+
+function startTask(name){
+
+    showToast(
+        name +
+        " opened. In production, this would load the task workflow and submission form."
+    );
+
+}
+
+
+/* =====================================================
+   COURSE
+===================================================== */
+
+function continueCourse(name){
+
+    showToast(
+        name +
+        " opened. Continue your lessons and track progress."
+    );
+
+}
+
+
+/* =====================================================
+   ASSESSMENT
+===================================================== */
+
+function runAssessment(){
+
+    showToast(
+        "Assessment started. A production version would record answers, calculate the score and issue a badge."
+    );
+
+}
+
+
+/* =====================================================
+   REFERRAL COPY
+===================================================== */
+
+function copyReferral(){
+
+    navigator.clipboard
+    ?.writeText(
+        document.getElementById(
+            "refLink"
+        ).value
+    )
+    .then(
+
+        () =>
+        showToast(
+            "Referral link copied!"
+        )
+
+    )
+    .catch(
+
+        () =>
+        showToast(
+            "Referral link: " +
+            document.getElementById(
+                "refLink"
+            ).value
+        )
+
+    );
+
+}
+
+
+/* =====================================================
+   WITHDRAW
+===================================================== */
+
+function withdraw(e){
+
+    e.preventDefault();
+
+
+    let amount =
+        Number(
+            document.getElementById(
+                "withdrawAmount"
+            ).value
+        );
+
+
+    if(
+        amount < 100
+    ){
+
+        showToast(
+            "Minimum demo withdrawal is KSh 100."
+        );
+
+        return;
+
+    }
+
+
+    closeModals();
+
+
+    showToast(
+        "Withdrawal request submitted for review."
+    );
+
+}
+
+
+/* =====================================================
+   SUPPORT TICKET
+===================================================== */
+
+function ticket(e){
+
+    e.preventDefault();
+
+
+    closeModals();
+
+
+    showToast(
+        "Support ticket submitted successfully."
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING BACKGROUND
+===================================================== */
+
+document.addEventListener(
+    "click",
+
+    e => {
+
+        if(
+            e.target.classList.contains(
+                "modal"
+            )
+        ){
+
+            closeModals();
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+render();
+
+</script>
+
+</body>
+</html>
